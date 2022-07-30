@@ -1,0 +1,28 @@
+@use "../../scss/" as *;
+
+.introduce {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  h1 {
+    font-size: 45px;
+    span {
+      background: $gradient-secondary;
+      @include text-gradient;
+    }
+  }
+  .action {
+    span {
+      font-weight: bold;
+      background: $gradient-third;
+      @include text-gradient;
+    }
+  }
+  .info .info-item div {
+    border-right: 1px solid #d1d1d1;
+  }
+
+  .info .info-item:last-child div {
+    border-right: 0px;
+  }
+}
