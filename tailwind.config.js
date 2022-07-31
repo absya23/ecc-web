@@ -6,6 +6,7 @@ module.exports = {
         header: ["Poppins", "sans-serif"],
         body: ["SegoeUI-regular"],
         desc: ["SegoeUI-light"],
+        title: ["SegoeUI-bold"],
       },
       colors: {
         note: "#F94671",

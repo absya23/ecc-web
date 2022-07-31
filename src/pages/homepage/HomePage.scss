@@ -26,3 +26,17 @@
     border-right: 0px;
   }
 }
+
+.intro-news {
+  .post-preview::after {
+    content: "";
+    position: absolute;
+    top: 120%;
+    width: 100%;
+    background: #000;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .post-preview:last-child::after {
+    width: 0;
+  }
+}

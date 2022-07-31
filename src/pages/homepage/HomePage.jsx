@@ -3,16 +3,19 @@ import Header from "../../components/header/Header";
 import introduce from "../../assets/homepage_intro.png";
 import "./HomePage.scss";
 import Button from "../../components/button/Button";
+import PostCard, { PostCardPreview } from "../../components/post/PostCard";
+import { posts } from "../../config/getAPI";
 
 const HomePage = () => {
+  const news = posts?.news || [];
   return (
     <>
       <Header></Header>
-      <section
-        style={{ backgroundImage: `url(${introduce})` }}
-        className="w-full h-screen introduce"
-      >
-        <div className="content pl-[100px] pt-[90px]">
+      <section className="relative w-full introduce min-w-[1280px] mb-10">
+        <div className="z-0 introduce-bg">
+          <img src={introduce} alt="" className="object-cover w-full" />
+        </div>
+        <div className="content pl-[100px] pt-[100px] absolute inset-0 z-10">
           <h1 className="mb-10 font-bold font-header text-primary">
             ECommerce Club <span>@UIT</span>
           </h1>
@@ -26,7 +29,7 @@ const HomePage = () => {
             <Button className="px-8 py-5 rounded-md btn-intro">
               Giới thiệu
             </Button>
-            <button className="flex items-center gap-x-3">
+            <button className="flex items-center gap-x-1">
               <svg
                 className="w-[80px h-[80px]"
                 width="70"
@@ -260,6 +263,30 @@ const HomePage = () => {
                 <p className="mt-2 leading-none">TP. Thủ Đức, TP.HCM</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="w-full intro-news px-[100px] mb-10">
+        <p className="font-bold text-note">Bản tin</p>
+        <h3 className="mb-8 text-2xl font-title">Tin tức nổi bật</h3>
+        <div className="grid grid-cols-3 gap-x-6">
+          {news.length > 0 &&
+            news
+              .slice(0, 2)
+              .map((item) => (
+                <PostCard
+                  key={item.id}
+                  data={item}
+                  authorName={false}
+                ></PostCard>
+              ))}
+          <div className="grid grid-rows-3">
+            {news.length > 0 &&
+              news
+                .slice(2, 5)
+                .map((item) => (
+                  <PostCardPreview key={item.id} data={item}></PostCardPreview>
+                ))}
           </div>
         </div>
       </section>
