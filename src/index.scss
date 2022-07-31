@@ -50,6 +50,17 @@
     drop-shadow(0px 0px 0px rgba(122, 159, 240, 0.25));
 }
 
+.btn-load {
+  color: #ff6915;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 144, 82, 0.25) 0%,
+    rgba(245, 149, 75, 0.25) 100%
+  );
+  opacity: 0.9;
+  box-shadow: 0px 4px 20px 2px rgba(242, 120, 51, 0.15);
+}
+
 .title:hover {
   color: $primary-color;
   cursor: pointer;
