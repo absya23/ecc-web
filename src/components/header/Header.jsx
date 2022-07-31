@@ -8,7 +8,7 @@ const Header = () => {
     <div className="flex bg-white header">
       <div className="flex items-center justify-center gap-5">
         <img src={Logo} alt="" className="h-[50px] w-[50px]" />
-        <h4 className="font-bold font-header">ECommerce UIT</h4>
+        <h2 className="font-bold font-header">ECommerce UIT</h2>
       </div>
       <ul className="nav h-full ml-auto flex items-center justify-center gap-x-[28px] mr-[80px]">
         <li className="item active">

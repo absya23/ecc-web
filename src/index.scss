@@ -17,10 +17,17 @@
   }
 }
 
-.break-line {
+.break-line-3 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.break-line-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   overflow: hidden;
 }
 
@@ -41,4 +48,9 @@
     drop-shadow(0px 10px 10px rgba(122, 159, 240, 0.21))
     drop-shadow(0px 2px 5px rgba(122, 159, 240, 0.25))
     drop-shadow(0px 0px 0px rgba(122, 159, 240, 0.25));
+}
+
+.title:hover {
+  color: $primary-color;
+  cursor: pointer;
 }
