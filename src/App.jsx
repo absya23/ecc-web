@@ -1,10 +1,15 @@
-import HomePage from "./pages/homepage/HomePage";
+import { Suspense } from "react";
+import Header from "./components/organisms/header/Header";
+import RouteConfig from "./config/RouteConfig";
 
 function App() {
   return (
-    <div className="">
-      <HomePage></HomePage>
-    </div>
+    <>
+      <Header></Header>
+      <Suspense>
+        <RouteConfig></RouteConfig>
+      </Suspense>
+    </>
   );
 }
 

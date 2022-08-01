@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../button/Button";
+import Button from "../../atoms/button/Button";
 
 const PostCard = ({
   authorName,
@@ -30,7 +30,7 @@ const PostCard = ({
   );
 };
 
-export const PostCardPreview = ({ data: { img, time, title, overview } }) => {
+export const PostCardRelate = ({ data: { img, time, title, overview } }) => {
   return (
     <div className="relative flex post-preview h-full max-h-[120px] cursor-pointer">
       <img

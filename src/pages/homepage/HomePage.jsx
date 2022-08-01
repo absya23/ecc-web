@@ -1,9 +1,11 @@
 import React from "react";
-import Header from "../../components/header/Header";
+// import Header from "../../components/organisms/header/Header";
 import introduce from "../../assets/homepage_intro.png";
 import "./HomePage.scss";
-import Button from "../../components/button/Button";
-import PostCard, { PostCardPreview } from "../../components/post/PostCard";
+import Button from "../../components/atoms/button/Button";
+import PostCard, {
+  PostCardRelate,
+} from "../../components/molecules/post/PostCard";
 import { posts } from "../../config/getAPI";
 
 const HomePage = () => {
@@ -11,7 +13,6 @@ const HomePage = () => {
   const events = posts?.events || [];
   return (
     <>
-      <Header></Header>
       <section className="relative w-full introduce min-w-[1280px] mb-10">
         <div className="z-0 introduce-bg">
           <img src={introduce} alt="" className="object-cover w-full" />
@@ -56,9 +57,9 @@ const HomePage = () => {
                     width="70"
                     height="70"
                     filterUnits="userSpaceOnUse"
-                    colorInterpolationLilters="sRGB"
+                    colorinterpolationlilters="sRGB"
                   >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -136,8 +137,8 @@ const HomePage = () => {
                       y2="34.0024"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#FFEEF1" />
-                      <stop offset="1" stop-color="#FFC6CF" />
+                      <stop stopColor="#FFEEF1" />
+                      <stop offset="1" stopColor="#FFC6CF" />
                     </linearGradient>
                     <linearGradient
                       id="paint1_linear_2_2290"
@@ -147,8 +148,8 @@ const HomePage = () => {
                       y2="24.5233"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#FD4685" />
-                      <stop offset="1" stop-color="#FF9D8C" />
+                      <stop stopColor="#FD4685" />
+                      <stop offset="1" stopColor="#FF9D8C" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -286,10 +287,10 @@ const HomePage = () => {
               news
                 .slice(2, 5)
                 .map((item) => (
-                  <PostCardPreview key={item.id} data={item}></PostCardPreview>
+                  <PostCardRelate key={item.id} data={item}></PostCardRelate>
                 ))}
           </div>
-          <Button className="btn-load px-5 py-4 absolute top-[10px] right-[100px] rounded-[30px]">
+          <Button className="btn-load px-5 py-4 absolute top-[10px] right-[100px]">
             <div className="flex items-center justify-center gap-x-2">
               <p className="">Xem thêm</p>
               <svg

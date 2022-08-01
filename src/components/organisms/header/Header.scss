@@ -1,4 +1,4 @@
-@use "../../scss/" as *;
+@use "../../../scss/" as *;
 .header {
   position: sticky;
   z-index: 9999;
@@ -13,19 +13,28 @@
     @include text-gradient;
   }
   .nav {
-    .item {
+    a {
       height: 100%;
       display: flex;
       align-items: center;
-      a {
-        padding: 20px 0px;
-      }
+      padding: 20px 0px;
+      transition: all 0.2s linear;
       &.active {
         font-weight: bold;
         background: $gradient-primary;
         @include text-gradient;
         border-bottom: 4px solid $primary-color;
+        // animation: slip 0.3s linear;
       }
     }
   }
 }
+
+// @keyframes slip {
+//   from {
+//     border-bottom: 4px solid #fff;
+//   }
+//   to {
+//     border-bottom: 4px solid $primary-color;
+//   }
+// }
