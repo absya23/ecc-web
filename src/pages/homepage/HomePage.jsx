@@ -8,6 +8,8 @@ import IntroduceEvents from "../../components/organisms/introduceEvents/Introduc
 import IntroduceEc from "../../components/organisms/introduceEc/IntroduceEc";
 import TextTitle from "../../components/atoms/textTitle/TextTitle";
 import cooperImg from "../../assets/cooperation.png";
+import IntroduceTeams from "../../components/organisms/introduceTeams/IntroduceTeams";
+import Footer from "../../components/organisms/footer/Footer";
 
 const HomePage = () => {
   return (
@@ -24,6 +26,8 @@ const HomePage = () => {
         </section>
         <img src={cooperImg} alt="" className="w-full" />
       </>
+      <IntroduceTeams></IntroduceTeams>
+      <Footer></Footer>
     </>
   );
 };
