@@ -2,14 +2,13 @@ import React from "react";
 
 import "./HomePage.scss";
 
-import IntroduceClub from "../../components/organisms/introduceClub/IntroduceClub";
-import IntroduceNews from "../../components/organisms/introduceNews/IntroduceNews";
-import IntroduceEvents from "../../components/organisms/introduceEvents/IntroduceEvents";
-import IntroduceEc from "../../components/organisms/introduceEc/IntroduceEc";
-import TextTitle from "../../components/atoms/textTitle/TextTitle";
-import cooperImg from "../../assets/cooperation.png";
-import IntroduceTeams from "../../components/organisms/introduceTeams/IntroduceTeams";
-import Footer from "../../components/organisms/footer/Footer";
+import IntroduceClub from "../../organisms/introduceClub/IntroduceClub";
+import IntroduceNews from "../../organisms/introduceNews/IntroduceNews";
+import IntroduceEvents from "../../organisms/introduceEvents/IntroduceEvents";
+import IntroduceEc from "../../organisms/introduceEc/IntroduceEc";
+import TextTitle from "../../atoms/textTitle/TextTitle";
+import IntroduceTeams from "../../organisms/introduceTeams/IntroduceTeams";
+import cooperImg from "../../../assets/cooperation.png";
 
 const HomePage = () => {
   return (
@@ -27,7 +26,6 @@ const HomePage = () => {
         <img src={cooperImg} alt="" className="w-full" />
       </>
       <IntroduceTeams></IntroduceTeams>
-      <Footer></Footer>
     </>
   );
 };

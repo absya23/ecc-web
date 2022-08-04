@@ -1,10 +1,12 @@
 import React from "react";
 import Button from "../../atoms/button/Button";
+import { authors } from "../../../config/getAPI";
 
 const PostCard = ({
   authorName,
-  data: { img, author, time, title, overview },
+  data: { img, author_id, time, title, overview },
 }) => {
+  const author = authors.find((item) => item.id === author_id);
   return (
     <div className="flex flex-col items-start post-card">
       <img
@@ -15,16 +17,16 @@ const PostCard = ({
       <div className="flex items-center mb-2 text-xs gap-x-2">
         {authorName && (
           <>
-            <p className="font-bold text-[#616673]">{author}</p>
+            <p className="font-bold text-author">{author.name}</p>
             <span className="p-[2px] rounded-full bg-note"></span>
           </>
         )}
-        <p className=" text-[#5D90F5]">{time}</p>
+        <p className="text-secondary">{time}</p>
       </div>
       <h5 className="mb-2 text-lg font-title break-line-2 title">{title}</h5>
       <p className="mb-5 font-desc break-line-3">{overview}</p>
       <Button className="rounded-md btn-primary h-[46px] px-5">
-        Đọc tiếp...
+        Đọc tiếp ...
       </Button>
     </div>
   );

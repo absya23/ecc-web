@@ -1,11 +1,11 @@
 import React from "react";
 import Button from "../../atoms/button/Button";
-import Logo from "../../molecules/logo/Logo";
+import Logo from "../../atoms/logo/Logo";
 import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <footer className="px-[100px] pt-[50px] pb-[60px] flex">
+    <footer className="px-[100px] pt-[40px] pb-[60px] flex">
       <div className="left flex flex-col w-full max-w-[400px]">
         <Logo></Logo>
         <p className="mb-4 mt-6">
@@ -20,7 +20,7 @@ const Footer = () => {
           rel="noreferrer"
           className="mb-4"
         >
-          <span className="font-semibold text-[#475467]">Fanpage:</span>{" "}
+          <span className="font-semibold text-[#475467]">Fanpage: </span>
           ECommerce Club - UIT
         </a>
         <a

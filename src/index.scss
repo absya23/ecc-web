@@ -17,6 +17,13 @@
   }
 }
 
+.break-line-6 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+}
+
 .break-line-3 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -65,4 +72,9 @@
 .title:hover {
   color: $primary-color;
   cursor: pointer;
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
 }

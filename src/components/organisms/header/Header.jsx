@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Button from "../../atoms/button/Button";
-import Logo from "../../molecules/logo/Logo";
+import Logo from "../../atoms/logo/Logo";
 import "./Header.scss";
 
 const Header = () => {

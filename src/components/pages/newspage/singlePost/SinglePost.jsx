@@ -1,6 +1,6 @@
 import React from "react";
 
-const PostPage = () => {
+const SinglePost = () => {
   return (
     <div>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro non,
@@ -113,4 +113,4 @@ const PostPage = () => {
   );
 };
 
-export default PostPage;
+export default SinglePost;

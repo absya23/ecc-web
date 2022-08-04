@@ -1,0 +1,11 @@
+@use "../../../scss/" as *;
+
+.topic {
+  font-size: 22px;
+  background: $gradient-green;
+  @include text-gradient;
+}
+
+.content {
+  grid-template-columns: 1fr 2fr;
+}

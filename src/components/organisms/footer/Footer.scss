@@ -5,6 +5,9 @@ footer {
     rgba(245, 243, 253, 0.52) -18.02%,
     #ffffff 101.84%
   );
+  a:hover {
+    color: $primary-color;
+  }
   .right {
     padding-top: 25px;
     ul {
