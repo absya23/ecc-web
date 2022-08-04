@@ -90,6 +90,36 @@ export const posts = {
       overview:
         "Tempor venenatis nunc elit vel aliquam facilisi phasellus aliquam ullamcorper. Vitae velit a accumsan suspendisse bibendum faucibus elementum. A varius commodo, velit nibh viverra id.",
     },
+    {
+      id: 4,
+      img: "https://images.unsplash.com/photo-1523582407565-efee5cf4a353?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      author_id: 1,
+      title:
+        "Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+      time: "10/08/2022 - 08:00AM",
+      overview:
+        "Tempor venenatis nunc elit vel aliquam facilisi phasellus aliquam ullamcorper. Vitae velit a accumsan suspendisse bibendum faucibus elementum. A varius commodo, velit nibh viverra id.",
+    },
+    {
+      id: 5,
+      img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      author_id: 2,
+      title:
+        "Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+      time: "10/08/2022 - 08:00AM",
+      overview:
+        "Tempor venenatis nunc elit vel aliquam facilisi phasellus aliquam ullamcorper. Vitae velit a accumsan suspendisse bibendum faucibus elementum. A varius commodo, velit nibh viverra id.",
+    },
+    {
+      id: 6,
+      img: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+      author_id: 4,
+      title:
+        "Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+      time: "10/08/2022 - 08:00AM",
+      overview:
+        "Tempor venenatis nunc elit vel aliquam facilisi phasellus aliquam ullamcorper. Vitae velit a accumsan suspendisse bibendum faucibus elementum. A varius commodo, velit nibh viverra id.",
+    },
   ],
   knowledges: [
     {

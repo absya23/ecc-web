@@ -8,7 +8,7 @@ const PostCard = ({
 }) => {
   const author = authors.find((item) => item.id === author_id);
   return (
-    <div className="flex flex-col items-start post-card">
+    <div className="flex flex-col items-start post-card transition-all">
       <img
         src={img}
         alt=""

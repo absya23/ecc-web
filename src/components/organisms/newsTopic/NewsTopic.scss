@@ -9,3 +9,16 @@
 .content {
   grid-template-columns: 1fr 2fr;
 }
+
+.post-list {
+  animation: appear 1.5s ease-in-out;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
