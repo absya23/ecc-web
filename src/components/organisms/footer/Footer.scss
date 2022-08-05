@@ -8,6 +8,11 @@ footer {
   a:hover {
     color: $primary-color;
   }
+  button:hover {
+    background: #fff;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
   .right {
     padding-top: 25px;
     ul {

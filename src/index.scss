@@ -78,3 +78,21 @@ img {
   object-fit: cover;
   object-position: center;
 }
+
+.postList-enter {
+  opacity: 0;
+  transform: translateX(50%);
+}
+.postList-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.postList-exit {
+  opacity: 1;
+}
+.postList-exit-active {
+  opacity: 0;
+  transform: translateX(50%);
+  transition: opacity 300ms, transform 300ms;
+}

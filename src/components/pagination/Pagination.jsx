@@ -44,7 +44,7 @@ const Pagination = ({ pagination, onPageChange }) => {
           </defs>
         </svg>
       </button>
-      <div className="flex items-center justify-center gap-x-2 mt-10">
+      <div className="flex items-center justify-center gap-x-2 absolute -bottom-[60px] left-1/2 -translate-x-1/2">
         {totalPage > 1 &&
           new Array(totalPage)
             .fill(0)
