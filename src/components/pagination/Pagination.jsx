@@ -12,7 +12,7 @@ const Pagination = ({ pagination, onPageChange }) => {
   return (
     <>
       <button
-        className={`absolute left-0 top-0 translate-y-[155px] -translate-x-1/2 flex justify-center items-center w-[53px] h-[53px] rounded-full ${
+        className={`arrow absolute left-0 top-0 translate-y-[155px] -translate-x-1/2 flex justify-center items-center w-[53px] h-[53px] rounded-full ${
           page === 1 ? "opacity-0 invisible" : ""
         }`}
         disabled={page <= 1}
@@ -58,7 +58,7 @@ const Pagination = ({ pagination, onPageChange }) => {
             ))}
       </div>
       <button
-        className={`absolute right-0 top-0 translate-y-[155px] translate-x-1/2 flex justify-center items-center w-[53px] h-[53px] rounded-full ${
+        className={`arrow absolute right-0 top-0 translate-y-[155px] translate-x-1/2 flex justify-center items-center w-[53px] h-[53px] rounded-full ${
           page === totalPage ? "opacity-0 invisible" : ""
         }`}
         disabled={page >= totalPage}

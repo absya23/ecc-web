@@ -7,8 +7,8 @@ const NewsHot = () => {
   const data = posts?.news || [];
   return (
     <section className="mt-[60px] w-full flex gap-x-[50px] mb-20">
-      <PostPreview data={data[0]}></PostPreview>
-      <LatestPosts data={data}></LatestPosts>
+      <PostPreview data={data[0]} topic="news"></PostPreview>
+      <LatestPosts data={data} topic="news"></LatestPosts>
     </section>
   );
 };

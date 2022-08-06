@@ -14,7 +14,12 @@ const IntroduceEvents = () => {
           events
             .slice(0, 4)
             .map((item) => (
-              <PostCard key={item.id} data={item} authorName={false}></PostCard>
+              <PostCard
+                key={item.id}
+                data={item}
+                authorName={false}
+                topic="events"
+              ></PostCard>
             ))}
       </div>
       <Button className="px-5 py-4 w-[140px] btn-load mx-auto mt-12">

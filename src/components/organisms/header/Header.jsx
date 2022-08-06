@@ -34,8 +34,15 @@ const Header = () => {
           Liên hệ
         </NavLink>
       </div>
-      <Button disabled className="px-8 py-3 btn-base rounded-lg">
-        Join
+      <Button className="btn-base rounded-lg">
+        <a
+          href="https://www.facebook.com/groups/ecommerceclubuit"
+          target="_blank"
+          rel="noreferrer"
+          className="block px-8 py-3"
+        >
+          Join
+        </a>
       </Button>
     </div>
   );

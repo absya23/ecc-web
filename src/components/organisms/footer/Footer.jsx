@@ -69,12 +69,12 @@ const Footer = () => {
           <p className="text-[#6A99FD] font-bold -translate-y-1">
             Connect with us for more new information update
           </p>
-          <Button className="px-6 py-4 btn-base rounded-lg font-desc">
+          <Button className="btn-base rounded-lg font-desc">
             <a
               href="https://www.facebook.com/groups/ecommerceclubuit"
               target="_blank"
               rel="noreferrer"
-              className="mb-4"
+              className="block px-6 py-4"
             >
               Join Community
             </a>

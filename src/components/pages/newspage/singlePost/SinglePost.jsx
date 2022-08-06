@@ -1,6 +1,10 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 const SinglePost = () => {
+  const data = useLocation();
+  // console.log(data);
+  console.log(data.state);
   return (
     <div>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro non,

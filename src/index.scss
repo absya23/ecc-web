@@ -40,8 +40,15 @@
 
 .btn-base {
   background: $gradient-primary;
+  border: 1px solid transparent;
   box-shadow: 7px 6px 9px rgba(5, 97, 255, 0.13),
     2px 1px 5px rgba(5, 97, 255, 0.15), 0px 0px 0px rgba(5, 97, 255, 0.15);
+}
+
+.btn-base:hover {
+  background: #fff;
+  border: 1px solid $primary-color;
+  color: $primary-color;
 }
 
 .btn-primary {

@@ -14,14 +14,23 @@ const IntroduceNews = () => {
           news
             .slice(0, 2)
             .map((item) => (
-              <PostCard key={item.id} data={item} authorName={false}></PostCard>
+              <PostCard
+                key={item.id}
+                data={item}
+                authorName={false}
+                topic="news"
+              ></PostCard>
             ))}
         <div className="grid grid-rows-3">
           {news.length > 0 &&
             news
               .slice(2, 5)
               .map((item) => (
-                <PostCardRelate key={item.id} data={item}></PostCardRelate>
+                <PostCardRelate
+                  key={item.id}
+                  data={item}
+                  topic="news"
+                ></PostCardRelate>
               ))}
         </div>
         <Button className="btn-load px-5 py-4 absolute top-[10px] right-[100px]">

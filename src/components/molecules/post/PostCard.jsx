@@ -1,12 +1,16 @@
 import React from "react";
 import Button from "../../atoms/button/Button";
 import { authors } from "../../../config/getAPI";
+import { useNavigate } from "react-router-dom";
 
 const PostCard = ({
   authorName,
-  data: { img, author_id, time, title, overview },
+  topic,
+  data: { id, img, author_id, time, title, overview },
 }) => {
   const author = authors.find((item) => item.id === author_id);
+  const navigate = useNavigate();
+  const newParam = title?.replace(/\s+/g, "-");
   return (
     <div className="flex flex-col items-start post-card transition-all">
       <img
@@ -23,16 +27,29 @@ const PostCard = ({
         )}
         <p className="text-secondary">{time}</p>
       </div>
-      <h5 className="mb-2 text-lg font-title break-line-2 title">{title}</h5>
+      <h4
+        className="mb-2 text-lg font-title break-line-2 title"
+        onClick={() => navigate(`/news/${newParam}`, { state: { id, topic } })}
+      >
+        {title}
+      </h4>
       <p className="mb-5 font-desc break-line-3">{overview}</p>
-      <Button className="rounded-md btn-primary h-[46px] px-5">
+      <Button
+        className="rounded-md btn-primary h-[46px] px-5"
+        onClick={() => navigate(`/news/${newParam}`, { state: { id, topic } })}
+      >
         Đọc tiếp ...
       </Button>
     </div>
   );
 };
 
-export const PostCardRelate = ({ data: { img, time, title, overview } }) => {
+export const PostCardRelate = ({
+  topic,
+  data: { id, img, time, title, overview },
+}) => {
+  const navigate = useNavigate();
+  const newParam = title.replace(/\s+/g, "-");
   return (
     <div className="relative flex post-preview h-full max-h-[120px] cursor-pointer">
       <img
@@ -42,7 +59,12 @@ export const PostCardRelate = ({ data: { img, time, title, overview } }) => {
       />
       <div className="flex flex-col flex-1 ml-4">
         <span className="text-[#5D90F5] text-[11px]">{time}</span>
-        <h6 className="mb-2 leading-tight break-line-2 font-title title">
+        <h6
+          className="mb-2 leading-tight break-line-2 font-title title"
+          onClick={() =>
+            navigate(`/news/${newParam}`, { state: { id, topic } })
+          }
+        >
           {title}
         </h6>
         <p className="text-xs break-line-3">{overview}</p>

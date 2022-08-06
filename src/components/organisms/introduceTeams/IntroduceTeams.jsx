@@ -5,8 +5,10 @@ import TeamCard from "../../molecules/team/TeamCard";
 import DevImg from "../../../assets/homepage_dev.png";
 import BusImg from "../../../assets/homepage_bus.png";
 import MediaImg from "../../../assets/homepage_media.png";
+import { useNavigate } from "react-router-dom";
 
 const IntroduceTeams = () => {
+  const navigate = useNavigate();
   return (
     <section className="mb-20 w-full intro-teams px-[100px] pt-[105px] flex flex-col items-center">
       <div className="text-center mb-[80px]">
@@ -19,7 +21,10 @@ const IntroduceTeams = () => {
           varius. Integer at aliquet accumsan massa aliquam, nisl commodo morbi
           curs
         </p>
-        <Button className="btn-load px-5 py-4">
+        <Button
+          className="btn-load px-5 py-4"
+          onClick={() => navigate("/aboutus")}
+        >
           <div className="flex items-center justify-center gap-x-2">
             <p className="">Xem thêm</p>
             <svg
