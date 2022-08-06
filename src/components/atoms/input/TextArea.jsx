@@ -1,19 +1,19 @@
 import React from "react";
 import { useController } from "react-hook-form";
 
-const Input = ({ control, ...props }) => {
+const TextArea = ({ control, ...props }) => {
   const { field } = useController({
-    control,
     name: props.name,
+    control,
     defaultValue: "",
   });
   return (
-    <input
-      className="input p-4 border border-[#798386] rounded-md"
+    <textarea
+      className="input p-4 border border-[#798386] rounded-xl h-[133px] resize-none"
       {...field}
       {...props}
-    />
+    ></textarea>
   );
 };
 
-export default Input;
+export default TextArea;
