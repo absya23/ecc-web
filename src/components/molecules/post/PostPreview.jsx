@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { authors } from "../../../config/getAPI";
 import Button from "../../atoms/button/Button";
+import TextAuthor from "../../atoms/textAuthor/TextAuthor";
 
 const PostPreview = ({
   topic,
@@ -22,17 +23,11 @@ const PostPreview = ({
         >
           {title}
         </h4>
-        <div className="author flex gap-x-3 text-[13px] mb-3">
-          <img
-            src={author.profile_pic}
-            alt=""
-            className="w-[46px] h-[46px] rounded-full"
-          />
-          <div className="flex-col">
-            <h6 className="font-title text-author">{author.name}</h6>
-            <p className="text-secondary">{time}</p>
-          </div>
-        </div>
+        <TextAuthor
+          pic={author.profile_pic}
+          name={author.name}
+          time_post={time}
+        ></TextAuthor>
         <p className="break-line-6 mb-9">{overview}</p>
         <Button
           className="px-7 py-4 btn-primary rounded-lg mb-7"

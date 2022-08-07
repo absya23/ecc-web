@@ -6,8 +6,8 @@ const NewsPage = lazy(() => import("../components/pages/newspage/NewsPage"));
 const AllPostsPage = lazy(() =>
   import("../components/pages/newspage/AllPostsPage")
 );
-const SinglePost = lazy(() =>
-  import("../components/pages/newspage/singlePost/SinglePost")
+const SinglePostPage = lazy(() =>
+  import("../components/pages/newspage/singlePost/SinglePostPage")
 );
 const ContactPage = lazy(() =>
   import("../components/pages/contactpage/ContactPage")
@@ -21,7 +21,7 @@ const RouteConfig = () => {
         <Route path="/aboutus" element={<AboutPage />}></Route>
         <Route path="/news" element={<NewsPage />}></Route>
         <Route path="/news/allposts" element={<AllPostsPage />}></Route>
-        <Route path="/news/:postTitle" element={<SinglePost />}></Route>
+        <Route path="/news/:postTitle" element={<SinglePostPage />}></Route>
         <Route path="/contact" element={<ContactPage />}></Route>
       </Routes>
     </>

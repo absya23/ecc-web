@@ -37,7 +37,7 @@ const NewsTopic = ({ children, topic }) => {
 
   return (
     <section className="post-list mb-40 relative transition-all">
-      <h4 className="topic font-title mb-10">{children}</h4>
+      <h4 className="topic-posts font-title mb-10">{children}</h4>
       <CSSTransition
         in={visible}
         timeout={300}
@@ -90,7 +90,7 @@ export const NewsTopic2 = ({ children, topic }) => {
 
   return (
     <section className="mb-40 relative">
-      <h4 className="topic font-title mb-10">{children}</h4>
+      <h4 className="topic-posts font-title mb-10">{children}</h4>
       <div className="w-full content grid gap-x-9">
         <PostCard data={data[0]} authorName={true}></PostCard>
         <div className="flex flex-col relative">

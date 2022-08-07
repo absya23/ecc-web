@@ -1,6 +1,6 @@
 @use "../../../scss/" as *;
 
-h2 {
+h2.logo {
   font-size: 32px;
   background: $gradient-secondary;
   @include text-gradient;

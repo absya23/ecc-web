@@ -2,8 +2,10 @@ import React from "react";
 import Button from "../../atoms/button/Button";
 import { authors } from "../../../config/getAPI";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const PostCard = ({
+  descPart = true,
   authorName,
   topic,
   data: { id, img, author_id, time, title, overview },
@@ -33,13 +35,19 @@ const PostCard = ({
       >
         {title}
       </h4>
-      <p className="mb-5 font-desc break-line-3">{overview}</p>
-      <Button
-        className="rounded-md btn-primary h-[46px] px-5"
-        onClick={() => navigate(`/news/${newParam}`, { state: { id, topic } })}
-      >
-        Đọc tiếp ...
-      </Button>
+      {descPart && (
+        <>
+          <p className="mb-5 font-desc break-line-3">{overview}</p>
+          <Button
+            className="rounded-md btn-primary h-[46px] px-5"
+            onClick={() =>
+              navigate(`/news/${newParam}`, { state: { id, topic } })
+            }
+          >
+            Đọc tiếp ...
+          </Button>
+        </>
+      )}
     </div>
   );
 };
@@ -71,6 +79,17 @@ export const PostCardRelate = ({
       </div>
     </div>
   );
+};
+
+PostCard.propTypes = {
+  authorName: PropTypes.bool,
+  topic: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
+};
+
+PostCardRelate.propTypes = {
+  topic: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default PostCard;

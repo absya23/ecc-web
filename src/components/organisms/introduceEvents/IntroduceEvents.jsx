@@ -1,27 +1,16 @@
 import React from "react";
 import Button from "../../atoms/button/Button";
-import PostCard from "../../molecules/post/PostCard";
 import { posts } from "../../../config/getAPI";
 import TextTitle from "../../atoms/textTitle/TextTitle";
+import Posts from "../posts/Posts";
 
 const IntroduceEvents = () => {
   const events = posts?.events || [];
   return (
     <section className="w-full intro-news px-[100px] mb-10 flex flex-col">
-      <TextTitle note="Thông báo">Hoạt động và sự kiện</TextTitle>
-      <div className="grid grid-cols-4 gap-x-9">
-        {events.length > 0 &&
-          events
-            .slice(0, 4)
-            .map((item) => (
-              <PostCard
-                key={item.id}
-                data={item}
-                authorName={false}
-                topic="events"
-              ></PostCard>
-            ))}
-      </div>
+      <Posts posts={events}>
+        <TextTitle note="Thông báo">Hoạt động và sự kiện</TextTitle>
+      </Posts>
       <Button className="px-5 py-4 w-[140px] btn-load mx-auto mt-12">
         <div className="flex items-center justify-center gap-x-2">
           <p className="">Xem tất cả</p>

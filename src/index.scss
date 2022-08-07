@@ -81,9 +81,38 @@
   cursor: pointer;
 }
 
+.topic-posts {
+  font-size: 22px;
+  background: $gradient-green;
+  @include text-gradient;
+}
+
 img {
   object-fit: cover;
   object-position: center;
+}
+
+br {
+  display: block;
+  margin: 12px;
+  content: " ";
+  line-height: 22px;
+}
+
+.post-preview::after {
+  content: "";
+  position: absolute;
+  top: 120%;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+}
+.post-preview:last-child::after {
+  width: 0;
+}
+
+.single-post-page-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
 .postList-enter {

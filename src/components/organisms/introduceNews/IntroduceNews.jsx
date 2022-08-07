@@ -3,6 +3,7 @@ import PostCard, { PostCardRelate } from "../../molecules/post/PostCard";
 import Button from "../../atoms/button/Button";
 import { posts } from "../../../config/getAPI";
 import TextTitle from "../../atoms/textTitle/TextTitle";
+import RelatePosts from "../../molecules/post/RelatePosts";
 
 const IntroduceNews = () => {
   const news = posts?.news || [];
@@ -21,18 +22,7 @@ const IntroduceNews = () => {
                 topic="news"
               ></PostCard>
             ))}
-        <div className="grid grid-rows-3">
-          {news.length > 0 &&
-            news
-              .slice(2, 5)
-              .map((item) => (
-                <PostCardRelate
-                  key={item.id}
-                  data={item}
-                  topic="news"
-                ></PostCardRelate>
-              ))}
-        </div>
+        <RelatePosts data={news.slice(2, 5)}></RelatePosts>
         <Button className="btn-load px-5 py-4 absolute top-[10px] right-[100px]">
           <div className="flex items-center justify-center gap-x-2">
             <p className="">Xem thêm</p>
