@@ -10,7 +10,7 @@ const RelatePosts = ({ descPosts = false, children, data }) => {
           {children}
         </h5>
       )}
-      <div className="grid grid-rows-3 gap-y-7">
+      <div className="flex flex-col gap-y-[40px]">
         {data.length > 0 &&
           data.map((item) => (
             <PostCardRelate

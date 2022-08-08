@@ -76,6 +76,17 @@
   border-radius: 30px;
 }
 
+.btn-filter {
+  background: $gradient-green;
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 14px;
+  &:not(.active) {
+    border: 1px solid #35e49b;
+    @include text-gradient;
+  }
+}
+
 .title:hover {
   color: $primary-color;
   cursor: pointer;
@@ -99,15 +110,21 @@ br {
   line-height: 22px;
 }
 
-.post-preview::after {
-  content: "";
+.post-preview hr {
   position: absolute;
-  top: 120%;
+  top: calc(100% + 20px);
   width: 100%;
-  border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
 }
-.post-preview:last-child::after {
-  width: 0;
+
+.post-preview:last-child hr {
+  border-top: 0px;
+  width: 0%;
+}
+
+.post-card-shadow {
+  background: #ffffff;
+  box-shadow: 0px 1px 20px rgba(120, 120, 120, 0.1);
 }
 
 .single-post-page-content {

@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const PostCard = ({
+  btn = true,
   descPart = true,
-  authorName,
+  authorName = false,
   topic,
   data: { id, img, author_id, time, title, overview },
 }) => {
@@ -14,7 +15,7 @@ const PostCard = ({
   const navigate = useNavigate();
   const newParam = title?.replace(/\s+/g, "-");
   return (
-    <div className="flex flex-col items-start post-card transition-all">
+    <div className="flex flex-col items-start transition-all post-card">
       <img
         src={img}
         alt=""
@@ -38,14 +39,16 @@ const PostCard = ({
       {descPart && (
         <>
           <p className="mb-5 font-desc break-line-3">{overview}</p>
-          <Button
-            className="rounded-md btn-primary h-[46px] px-5"
-            onClick={() =>
-              navigate(`/news/${newParam}`, { state: { id, topic } })
-            }
-          >
-            Đọc tiếp ...
-          </Button>
+          {btn && (
+            <Button
+              className="rounded-md btn-primary h-[46px] px-5"
+              onClick={() =>
+                navigate(`/news/${newParam}`, { state: { id, topic } })
+              }
+            >
+              Đọc tiếp ...
+            </Button>
+          )}
         </>
       )}
     </div>
@@ -77,6 +80,7 @@ export const PostCardRelate = ({
         </h6>
         <p className="text-xs break-line-3">{overview}</p>
       </div>
+      <hr />
     </div>
   );
 };
