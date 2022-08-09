@@ -4,9 +4,11 @@ import Button from "../../atoms/button/Button";
 import { posts } from "../../../config/getAPI";
 import TextTitle from "../../atoms/textTitle/TextTitle";
 import RelatePosts from "../../molecules/post/RelatePosts";
+import { useNavigate } from "react-router-dom";
 
 const IntroduceNews = () => {
   const news = posts?.news || [];
+  const navigate = useNavigate();
   return (
     <section className="relative w-full intro-news px-[100px] mb-20">
       <TextTitle note="Bản tin">Tin tức nổi bật</TextTitle>
@@ -23,7 +25,10 @@ const IntroduceNews = () => {
               ></PostCard>
             ))}
         <RelatePosts data={news.slice(2, 5)}></RelatePosts>
-        <Button className="btn-load px-5 py-4 absolute top-[10px] right-[100px]">
+        <Button
+          className="btn-load px-5 py-4 absolute top-[10px] right-[100px]"
+          onClick={() => navigate("/news/allposts")}
+        >
           <div className="flex items-center justify-center gap-x-2">
             <p className="">Xem thêm</p>
             <svg

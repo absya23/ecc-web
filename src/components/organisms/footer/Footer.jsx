@@ -2,8 +2,9 @@ import React from "react";
 import Button from "../../atoms/button/Button";
 import Logo from "../../atoms/logo/Logo";
 import "./Footer.scss";
-
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="px-[100px] pt-[40px] pb-[60px] flex">
       <div className="left flex flex-col w-full max-w-[400px]">
@@ -60,7 +61,9 @@ const Footer = () => {
             <li>Tư vấn</li>
           </ul>
           <ul className="flex flex-col gap-y-4">
-            <li>Liên hệ</li>
+            <li className="cursor-pointer" onClick={() => navigate("/contact")}>
+              Liên hệ
+            </li>
             <li>Trực tuyến</li>
             <li>Trực tiếp</li>
           </ul>

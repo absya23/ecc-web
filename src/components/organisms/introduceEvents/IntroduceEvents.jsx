@@ -3,15 +3,20 @@ import Button from "../../atoms/button/Button";
 import { posts } from "../../../config/getAPI";
 import TextTitle from "../../atoms/textTitle/TextTitle";
 import Posts from "../posts/Posts";
+import { useNavigate } from "react-router-dom";
 
 const IntroduceEvents = () => {
   const events = posts?.events || [];
+  const navigate = useNavigate();
   return (
     <section className="w-full intro-news px-[100px] mb-10 flex flex-col">
       <Posts posts={events}>
         <TextTitle note="Thông báo">Hoạt động và sự kiện</TextTitle>
       </Posts>
-      <Button className="px-5 py-4 w-[140px] btn-load mx-auto mt-12">
+      <Button
+        className="px-5 py-4 w-[140px] btn-load mx-auto mt-12"
+        onClick={() => navigate("/news/allposts")}
+      >
         <div className="flex items-center justify-center gap-x-2">
           <p className="">Xem tất cả</p>
           <svg

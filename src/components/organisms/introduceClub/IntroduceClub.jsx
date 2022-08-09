@@ -1,8 +1,10 @@
 import React from "react";
 import Button from "../../atoms/button/Button";
 import introduce from "../../../assets/homepage_intro.png";
+import { useNavigate } from "react-router-dom";
 
 const IntroduceClub = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative w-full introduce min-w-[1280px] mb-10">
       <div className="z-0 introduce-bg">
@@ -19,8 +21,16 @@ const IntroduceClub = () => {
           thể hiện và phát huy khả năng của bản thân mình.
         </p>
         <div className="flex items-center mb-24 action gap-x-9">
-          <Button className="px-8 py-5 rounded-md btn-intro">Giới thiệu</Button>
-          <button className="flex items-center gap-x-1">
+          <Button
+            className="px-8 py-5 rounded-md btn-intro"
+            onClick={() => navigate("/aboutus")}
+          >
+            Giới thiệu
+          </Button>
+          <button
+            className="flex items-center gap-x-1"
+            onClick={() => navigate("/news")}
+          >
             <svg
               className="w-[80px h-[80px]"
               width="70"
