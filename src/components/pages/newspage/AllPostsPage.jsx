@@ -10,7 +10,7 @@ import { debounce } from "lodash";
 
 import ReactPaginate from "react-paginate";
 
-const itemsPerPage = 4;
+const itemsPerPage = 6;
 const AllPostsPage = () => {
   // use param to get topic
   const dataLoca = useLocation();
