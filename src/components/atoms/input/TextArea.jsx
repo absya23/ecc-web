@@ -9,7 +9,7 @@ const TextArea = ({ control, ...props }) => {
   });
   return (
     <textarea
-      className="input p-4 border border-[#798386] rounded-xl h-[133px] resize-none"
+      className="input p-4 border border-[#798386] rounded-xl h-[133px] resize-none outline-none"
       {...field}
       {...props}
     ></textarea>

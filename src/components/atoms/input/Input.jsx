@@ -9,7 +9,7 @@ const Input = ({ control, ...props }) => {
   });
   return (
     <input
-      className="input p-4 border border-[#798386] rounded-md"
+      className="input p-4 border border-[#798386] rounded-md outline-none"
       {...field}
       {...props}
     />

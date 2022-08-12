@@ -5,9 +5,10 @@ const PostCardsVertical = ({ data }) => {
   return (
     <div className="flex flex-col gap-y-4">
       {data.length > 0 &&
-        data.map((item) => (
+        data.map((item, index) => (
           <div className="p-3 post-card-shadow rounded-xl">
             <PostCard
+              key={index}
               topic="topic"
               data={item}
               btn={false}

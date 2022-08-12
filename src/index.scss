@@ -149,3 +149,23 @@ br {
   transform: translateX(50%);
   transition: opacity 300ms, transform 300ms;
 }
+//pagination
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  .selected {
+    @apply text-white;
+    background: $gradient-primary;
+    border-radius: 100%;
+  }
+}
+
+.pagination li {
+  display: flex;
+  padding: 5px 13px;
+  align-items: center;
+  justify-content: center;
+}

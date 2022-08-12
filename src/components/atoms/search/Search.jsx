@@ -1,12 +1,13 @@
 import React from "react";
 
-const Search = () => {
+const Search = (props) => {
   return (
     <div className="relative mr-3">
       <input
         type="text"
         placeholder="Tìm kiếm ..."
-        className="pl-12 pr-8 py-2 border border-primary rounded-[20px] focus:shadow"
+        className="pl-12 pr-8 py-2 border border-primary rounded-[20px] focus:shadow outline-none"
+        {...props}
       ></input>
       <span className="absolute -translate-y-1/2 top-1/2 left-5">
         <svg
