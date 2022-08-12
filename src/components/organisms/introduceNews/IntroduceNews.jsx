@@ -1,13 +1,14 @@
 import React from "react";
-import PostCard, { PostCardRelate } from "../../molecules/post/PostCard";
+import PostCard from "../../molecules/post/PostCard";
 import Button from "../../atoms/button/Button";
-import { posts } from "../../../config/getAPI";
 import TextTitle from "../../atoms/textTitle/TextTitle";
 import RelatePosts from "../../molecules/post/RelatePosts";
 import { useNavigate } from "react-router-dom";
-
+import { useSelector } from "react-redux";
+import handleGetPostsByType from "../../../handlers/handleGetPost";
 const IntroduceNews = () => {
-  const news = posts?.news || [];
+  const data = useSelector((state) => state.post.data);
+  const news = handleGetPostsByType(data, "news");
   const navigate = useNavigate();
   return (
     <section className="relative w-full intro-news px-[100px] mb-20">
@@ -27,7 +28,9 @@ const IntroduceNews = () => {
         <RelatePosts data={news.slice(2, 5)}></RelatePosts>
         <Button
           className="btn-load px-5 py-4 absolute top-[10px] right-[100px]"
-          onClick={() => navigate("/news/allposts")}
+          onClick={() =>
+            navigate("/news/allposts/tin-tuc", { state: { topic: "news" } })
+          }
         >
           <div className="flex items-center justify-center gap-x-2">
             <p className="">Xem thêm</p>

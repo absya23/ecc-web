@@ -1,5 +1,6 @@
 import React from "react";
-import { authors } from "../../../config/getAPI";
+import { useSelector } from "react-redux";
+import { useCopyToClipboard } from "../../../hooks/useCopyToClipBoard";
 import Button from "../../atoms/button/Button";
 import TextAuthor from "../../atoms/textAuthor/TextAuthor";
 import "./SinglePost.scss";
@@ -8,10 +9,17 @@ const SinglePost = ({
   topic,
   data: { id, img, author_id, time, title, overview },
 }) => {
+  const authors = useSelector((state) => state.member.data);
   const author = authors.find((item) => item.id === author_id);
+  const [copied, copy] = useCopyToClipboard(window.location.href);
+  const handleShare = () => {
+    copy();
+    console.log(copied);
+    alert("Copied to clipboard!");
+  };
   return (
-    <div className="flex-1 flex flex-col w-full pb-60px">
-      <p className="topic-name font-title capitalize mb-4">{topic}</p>
+    <div className="flex flex-col flex-1 w-full pb-60px">
+      <p className="mb-4 capitalize topic-name font-title">{topic}</p>
       <h2 className="font-title text-[30px] leading-normal mb-9">{title}</h2>
       <div className="flex justify-between mb-4">
         <TextAuthor
@@ -20,7 +28,10 @@ const SinglePost = ({
           time_post={time}
         ></TextAuthor>
         <div className="flex gap-x-4">
-          <Button className="bg-[#F3F3F3] px-[20px] py-[16px] rounded-[10px]">
+          <Button
+            className="bg-[#F3F3F3] px-[20px] py-[16px] rounded-[10px]"
+            onClick={handleShare}
+          >
             <div className="flex gap-x-1">
               <svg
                 width="16"
@@ -51,13 +62,13 @@ const SinglePost = ({
                   fill="white"
                 />
               </svg>
-              <p>Share</p>
+              <p>Like</p>
             </div>
           </Button>
         </div>
       </div>
       <div className="text leading-relaxed text-[#616161] text-justify">
-        <p className="desc mb-5">
+        <p className="mb-5 desc">
           <span className="font-semibold">Nội dung chính </span>
           {overview}
         </p>

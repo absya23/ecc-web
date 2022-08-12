@@ -1,18 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
-import { posts } from "../../../config/getAPI";
 import PostCard from "../../molecules/post/PostCard";
 import Pagination from "../../pagination/Pagination";
 import { CSSTransition } from "react-transition-group";
 import "./NewsTopic.scss";
+import { useSelector } from "react-redux";
+import handleGetPostsByType from "../../../handlers/handleGetPost";
 
 const NewsTopic = ({ children, topic }) => {
   const [visible, setVisible] = useState(false);
-  const data = posts?.[topic] || [];
-  const [postList, setPostList] = useState(data.slice(0, 4));
+  const data = useSelector((state) => state.post.data);
+  const posts = handleGetPostsByType(data, topic);
+  const [postList, setPostList] = useState(posts.slice(0, 4));
   const [pagination, setPagination] = useState({
     page: 1,
     row: 4,
-    totalPosts: data.length,
+    totalPosts: posts.length,
   });
   const handlePageChange = (newPage) => {
     setVisible(false);
@@ -22,7 +24,7 @@ const NewsTopic = ({ children, topic }) => {
 
   const handleUpdatePostList = useRef({});
   handleUpdatePostList.current = () => {
-    const newPostList = data.slice(
+    const newPostList = posts.slice(
       (pagination.page - 1) * pagination.row,
       pagination.page * pagination.row
     );
@@ -36,8 +38,8 @@ const NewsTopic = ({ children, topic }) => {
   }, [pagination.page]);
 
   return (
-    <section className="post-list mb-40 relative transition-all">
-      <h4 className="topic-posts font-title mb-10">{children}</h4>
+    <section className="relative mb-40 transition-all post-list">
+      <h4 className="mb-10 topic-posts font-title">{children}</h4>
       <CSSTransition
         in={visible}
         timeout={300}
@@ -61,12 +63,13 @@ const NewsTopic = ({ children, topic }) => {
 
 export const NewsTopic2 = ({ children, topic }) => {
   const [visible, setVisible] = useState(false);
-  const data = posts?.[topic] || [];
-  const [postList, setPostList] = useState(data.slice(0, 4));
+  const data = useSelector((state) => state.post.data);
+  const posts = handleGetPostsByType(data, topic);
+  const [postList, setPostList] = useState(posts.slice(0, 4));
   const [pagination, setPagination] = useState({
     page: 1,
     row: 3,
-    totalPosts: data.length - 1,
+    totalPosts: posts.length - 1,
   });
   const handlePageChange = (newPage) => {
     setVisible(false);
@@ -76,7 +79,7 @@ export const NewsTopic2 = ({ children, topic }) => {
 
   const handleUpdatePostList = useRef({});
   handleUpdatePostList.current = () => {
-    const newPostList = data.slice(
+    const newPostList = posts.slice(
       (pagination.page - 1) * pagination.row + 1,
       pagination.page * pagination.row + 1
     );
@@ -89,11 +92,11 @@ export const NewsTopic2 = ({ children, topic }) => {
   }, [pagination.page]);
 
   return (
-    <section className="mb-40 relative">
-      <h4 className="topic-posts font-title mb-10">{children}</h4>
-      <div className="w-full content grid gap-x-9">
-        <PostCard data={data[0]} authorName={true}></PostCard>
-        <div className="flex flex-col relative">
+    <section className="relative mb-40">
+      <h4 className="mb-10 topic-posts font-title">{children}</h4>
+      <div className="grid w-full content gap-x-9">
+        <PostCard data={posts[0]} authorName={true}></PostCard>
+        <div className="relative flex flex-col">
           <CSSTransition
             in={visible}
             timeout={300}

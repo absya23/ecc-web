@@ -1,12 +1,14 @@
 import React from "react";
 import Button from "../../atoms/button/Button";
-import { posts } from "../../../config/getAPI";
 import TextTitle from "../../atoms/textTitle/TextTitle";
 import Posts from "../posts/Posts";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import handleGetPostsByType from "../../../handlers/handleGetPost";
 
 const IntroduceEvents = () => {
-  const events = posts?.events || [];
+  const data = useSelector((state) => state.post.data);
+  const events = handleGetPostsByType(data, "events");
   const navigate = useNavigate();
   return (
     <section className="w-full intro-news px-[100px] mb-10 flex flex-col">
@@ -15,7 +17,11 @@ const IntroduceEvents = () => {
       </Posts>
       <Button
         className="px-5 py-4 w-[140px] btn-load mx-auto mt-12"
-        onClick={() => navigate("/news/allposts")}
+        onClick={() =>
+          navigate("/news/allposts/thong-bao-su-kien", {
+            state: { topic: "events" },
+          })
+        }
       >
         <div className="flex items-center justify-center gap-x-2">
           <p className="">Xem tất cả</p>

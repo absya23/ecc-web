@@ -1,6 +1,7 @@
 import React from "react";
 import { PostCardRelate } from "./PostCard";
 import PropTypes from "prop-types";
+import "./RelatePost.scss";
 
 const RelatePosts = ({ descPosts = false, children, data }) => {
   return (
@@ -10,7 +11,7 @@ const RelatePosts = ({ descPosts = false, children, data }) => {
           {children}
         </h5>
       )}
-      <div className="flex flex-col gap-y-[40px]">
+      <div className="flex flex-col gap-y-[40px] relate-posts">
         {data.length > 0 &&
           data.map((item) => (
             <PostCardRelate

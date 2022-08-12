@@ -20,7 +20,7 @@ const RouteConfig = () => {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/aboutus" element={<AboutPage />}></Route>
         <Route path="/news" element={<NewsPage />}></Route>
-        <Route path="/news/allposts" element={<AllPostsPage />}></Route>
+        <Route path="/news/allposts/:topic" element={<AllPostsPage />}></Route>
         <Route path="/news/:postTitle" element={<SinglePostPage />}></Route>
         <Route path="/contact" element={<ContactPage />}></Route>
       </Routes>

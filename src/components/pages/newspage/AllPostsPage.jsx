@@ -2,15 +2,17 @@ import React from "react";
 import Button from "../../atoms/button/Button";
 import RelatePosts from "../../molecules/post/RelatePosts";
 import { useLocation } from "react-router-dom";
-import { posts } from "../../../config/getAPI";
 import Search from "../../atoms/search/Search";
 import PostCardsVertical from "../../organisms/postCardsVertical/PostCardsVertical";
+import { useSelector } from "react-redux";
+import handleGetPostsByType from "../../../handlers/handleGetPost";
 
 const AllPostsPage = () => {
   // use param to get topic
-  const data = useLocation();
-  const topic = data.state?.topic || "news";
-  const allPosts = posts?.[topic] || [];
+  const dataLoca = useLocation();
+  const topic = dataLoca.state?.topic || "news";
+  const data = useSelector((state) => state.post.data);
+  const allPosts = handleGetPostsByType(data, topic);
   return (
     <>
       <div className="px-[100px] pt-[40px]">

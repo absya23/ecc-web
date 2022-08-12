@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "../../atoms/button/Button";
-import { authors } from "../../../config/getAPI";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 
 const PostCard = ({
   btn = true,
@@ -11,6 +11,7 @@ const PostCard = ({
   topic,
   data: { id, img, author_id, time, title, overview },
 }) => {
+  const authors = useSelector((state) => state.member.data);
   const author = authors.find((item) => item.id === author_id);
   const navigate = useNavigate();
   const newParam = title?.replace(/\s+/g, "-");
@@ -42,9 +43,7 @@ const PostCard = ({
           {btn && (
             <Button
               className="rounded-md btn-primary h-[46px] px-5"
-              onClick={() =>
-                navigate(`/news/${newParam}`, { state: { id, topic } })
-              }
+              onClick={() => navigate(`/news/${newParam}`, { state: { id } })}
             >
               Đọc tiếp ...
             </Button>
@@ -72,9 +71,7 @@ export const PostCardRelate = ({
         <span className="text-[#5D90F5] text-[11px]">{time}</span>
         <h6
           className="mb-2 leading-tight break-line-2 font-title title"
-          onClick={() =>
-            navigate(`/news/${newParam}`, { state: { id, topic } })
-          }
+          onClick={() => navigate(`/news/${newParam}`, { state: { id } })}
         >
           {title}
         </h6>
@@ -87,12 +84,12 @@ export const PostCardRelate = ({
 
 PostCard.propTypes = {
   authorName: PropTypes.bool,
-  topic: PropTypes.string.isRequired,
+  topic: PropTypes.string,
   data: PropTypes.object.isRequired,
 };
 
 PostCardRelate.propTypes = {
-  topic: PropTypes.string.isRequired,
+  topic: PropTypes.string,
   data: PropTypes.object.isRequired,
 };
 
