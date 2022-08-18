@@ -42,7 +42,7 @@ const AllPostsPage = () => {
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
     if (!postsSearch || postsSearch?.length === 0) return;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(postsSearch.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(postsSearch?.length / itemsPerPage));
   }, [postsSearch, itemOffset]);

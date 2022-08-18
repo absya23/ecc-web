@@ -1,7 +1,7 @@
 @use "../../../scss/" as *;
 
 .introduce {
-  background-size: cover;
+  background-size: content;
   background-repeat: no-repeat;
   background-position: center;
   h1 {
@@ -59,5 +59,54 @@ section h3 {
     width: 100%;
     height: 1px;
     background: $gradient-primary;
+  }
+}
+
+@media (max-width: 1200px) {
+  .intro-event {
+    width: 80%;
+    &_content {
+      & > div {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        row-gap: 36px;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .intro-event {
+    &_content {
+      & > div {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, minmax(0, 1fr));
+        row-gap: 36px;
+      }
+    }
+  }
+  .intro-ec {
+    & > div {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      & > div {
+        width: 100%;
+        img {
+          width: 50%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .intro-teams {
+    .card-list {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      row-gap: 56px;
+      // .card-team {
+      //   width: 200px;
+      // }
+    }
   }
 }

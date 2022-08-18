@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Footer from "./components/organisms/footer/Footer";
 import Header from "./components/organisms/header/Header";
 import RouteConfig from "./config/RouteConfig";
+import ViewportProvider from "./context/viewportContext";
 
 function App() {
   const { pathname } = useLocation();
@@ -13,11 +14,13 @@ function App() {
 
   return (
     <>
-      <Header></Header>
-      <Suspense fallback={<></>}>
-        <RouteConfig></RouteConfig>
-      </Suspense>
-      <Footer></Footer>
+      <ViewportProvider>
+        <Header></Header>
+        <Suspense fallback={<></>}>
+          <RouteConfig></RouteConfig>
+        </Suspense>
+        <Footer></Footer>
+      </ViewportProvider>
     </>
   );
 }

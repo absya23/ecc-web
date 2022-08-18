@@ -1,0 +1,30 @@
+@use "../../../scss/" as *;
+
+@media (max-width: 1200px) {
+  .contact-page {
+    flex-direction: column;
+    row-gap: 40px;
+    justify-content: center;
+    &_infor {
+      width: 80%;
+      flex-direction: row;
+      justify-content: center;
+      .img-wrap {
+        display: none;
+        img {
+          width: 100%;
+        }
+      }
+      &_list {
+        width: 60%;
+        min-width: 300px;
+        padding-left: 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, minmax(0, 1fr));
+        p {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

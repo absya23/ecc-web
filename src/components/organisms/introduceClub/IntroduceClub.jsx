@@ -1,115 +1,120 @@
 import React from "react";
 import Button from "../../atoms/button/Button";
-import introduce from "../../../assets/homepage_intro.png";
+import introduceClub from "../../../assets/homepage_introClub.png";
 import { useNavigate } from "react-router-dom";
 
 const IntroduceClub = () => {
   const navigate = useNavigate();
   return (
-    <section className="relative w-full introduce min-w-[1280px] mb-10">
-      <div className="z-0 introduce-bg">
-        <img src={introduce} alt="" className="object-cover w-full" />
-      </div>
-      <div className="content pl-[100px] pt-[100px] absolute inset-0 z-10">
-        <h1 className="mb-10 font-bold font-header text-primary">
-          ECommerce Club <span>@UIT</span>
-        </h1>
-        <p className="mb-16 w-[520px] leading-10">
-          Nơi kết nối, giao lưu, chia sẻ kiến thức của sinh viên Thương mại điện
-          tử UIT - ĐHQG TP.HCM nói riêng và cộng đồng sinh viên có niềm đam mê
-          với Thương mại điện tử nói chung. Là ngôi nhà chung cho mọi người được
-          thể hiện và phát huy khả năng của bản thân mình.
-        </p>
-        <div className="flex items-center mb-24 action gap-x-9">
-          <Button
-            className="px-8 py-5 rounded-md btn-intro"
-            onClick={() => navigate("/aboutus")}
-          >
-            Giới thiệu
-          </Button>
-          <button
-            className="flex items-center gap-x-1"
-            onClick={() => navigate("/news")}
-          >
-            <svg
-              className="w-[80px h-[80px]"
-              width="70"
-              height="70"
-              viewBox="0 0 70 70"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g filter="url(#filter0_d_2_2283)">
-                <circle cx="33" cy="31" r="25" fill="white" />
-              </g>
-              <g clipPath="url(#clip0_2_2283)">
-                <path
-                  d="M40.2847 27.542L32.1026 21.5422C31.4635 21.0743 30.7073 20.7924 29.9179 20.7279C29.1284 20.6634 28.3365 20.8187 27.63 21.1767C26.9234 21.5347 26.3297 22.0814 25.9148 22.7561C25.4999 23.4308 25.2799 24.2072 25.2793 24.9993V37.0048C25.2781 37.7977 25.4969 38.5754 25.9114 39.2512C26.3259 39.9271 26.9199 40.4747 27.6271 40.8331C28.3344 41.1914 29.1272 41.3464 29.9174 41.2809C30.7075 41.2154 31.464 40.9319 32.1026 40.462L40.2847 34.4622C40.8276 34.0638 41.2691 33.5431 41.5734 32.9424C41.8777 32.3416 42.0362 31.6777 42.0362 31.0042C42.0362 30.3308 41.8777 29.6669 41.5734 29.0661C41.2691 28.4654 40.8276 27.9447 40.2847 27.5463V27.542Z"
-                  fill="url(#paint0_linear_2_2283)"
-                />
-              </g>
-              <defs>
-                <filter
-                  id="filter0_d_2_2283"
-                  x="0"
-                  y="0"
+    <section className="relative introduce mb-10 max-w-full flex flex-col bg-[#fafafa]">
+      {/* <div className="z-0 introduce-bg">
+        <img src={introduce} alt="" />
+      </div> */}
+      <div className="mx-auto introduce_club_container">
+        <div className="flex  introduce_club_container_content justify-center max-w-[1200px]">
+          <div className="content mt-20">
+            <h1 className="mb-10 font-bold font-header leading-snug text-primary">
+              ECommerce Club <span>@UIT</span>
+            </h1>
+            <p className="mb-16 w-[520px] leading-10">
+              Nơi kết nối, giao lưu, chia sẻ kiến thức của sinh viên Thương mại
+              điện tử UIT - ĐHQG TP.HCM nói riêng và cộng đồng sinh viên có niềm
+              đam mê với Thương mại điện tử nói chung. Là ngôi nhà chung cho mọi
+              người được thể hiện và phát huy khả năng của bản thân mình.
+            </p>
+            <div className="flex items-center mb-24 action gap-x-9">
+              <Button
+                className="px-8 py-5 rounded-md btn-intro"
+                onClick={() => navigate("/aboutus")}
+              >
+                Giới thiệu
+              </Button>
+              <button
+                className="flex items-center gap-x-1"
+                onClick={() => navigate("/news")}
+              >
+                <svg
+                  className="w-[80px h-[80px]"
                   width="70"
                   height="70"
-                  filterUnits="userSpaceOnUse"
-                  colorinterpolationlilters="sRGB"
+                  viewBox="0 0 70 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dx="2" dy="4" />
-                  <feGaussianBlur stdDeviation="5" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0.415686 0 0 0 0 0.741176 0 0 0 0 0.956863 0 0 0 0.2 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_2_2283"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_2_2283"
-                    result="shape"
-                  />
-                </filter>
-                <linearGradient
-                  id="paint0_linear_2_2283"
-                  x1="47.0823"
-                  y1="19.0163"
-                  x2="20.898"
-                  y2="21.6068"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#00FFE0" />
-                  <stop offset="0.524375" stopColor="#4BD0EE" />
-                  <stop offset="1" stopColor="#86ABF9" />
-                </linearGradient>
-                <clipPath id="clip0_2_2283">
-                  <rect
-                    width="20.5882"
-                    height="20.5882"
-                    fill="white"
-                    transform="translate(22.7058 20.7058)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-            <span>Sự kiện</span>
-          </button>
+                  <g filter="url(#filter0_d_2_2283)">
+                    <circle cx="33" cy="31" r="25" fill="white" />
+                  </g>
+                  <g clipPath="url(#clip0_2_2283)">
+                    <path
+                      d="M40.2847 27.542L32.1026 21.5422C31.4635 21.0743 30.7073 20.7924 29.9179 20.7279C29.1284 20.6634 28.3365 20.8187 27.63 21.1767C26.9234 21.5347 26.3297 22.0814 25.9148 22.7561C25.4999 23.4308 25.2799 24.2072 25.2793 24.9993V37.0048C25.2781 37.7977 25.4969 38.5754 25.9114 39.2512C26.3259 39.9271 26.9199 40.4747 27.6271 40.8331C28.3344 41.1914 29.1272 41.3464 29.9174 41.2809C30.7075 41.2154 31.464 40.9319 32.1026 40.462L40.2847 34.4622C40.8276 34.0638 41.2691 33.5431 41.5734 32.9424C41.8777 32.3416 42.0362 31.6777 42.0362 31.0042C42.0362 30.3308 41.8777 29.6669 41.5734 29.0661C41.2691 28.4654 40.8276 27.9447 40.2847 27.5463V27.542Z"
+                      fill="url(#paint0_linear_2_2283)"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_d_2_2283"
+                      x="0"
+                      y="0"
+                      width="70"
+                      height="70"
+                      filterUnits="userSpaceOnUse"
+                      colorinterpolationlilters="sRGB"
+                    >
+                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset dx="2" dy="4" />
+                      <feGaussianBlur stdDeviation="5" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0.415686 0 0 0 0 0.741176 0 0 0 0 0.956863 0 0 0 0.2 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow_2_2283"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_2_2283"
+                        result="shape"
+                      />
+                    </filter>
+                    <linearGradient
+                      id="paint0_linear_2_2283"
+                      x1="47.0823"
+                      y1="19.0163"
+                      x2="20.898"
+                      y2="21.6068"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#00FFE0" />
+                      <stop offset="0.524375" stopColor="#4BD0EE" />
+                      <stop offset="1" stopColor="#86ABF9" />
+                    </linearGradient>
+                    <clipPath id="clip0_2_2283">
+                      <rect
+                        width="20.5882"
+                        height="20.5882"
+                        fill="white"
+                        transform="translate(22.7058 20.7058)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span>Sự kiện</span>
+              </button>
+            </div>
+          </div>
+          <img src={introduceClub} alt="" className="w-1/2 object-contain" />
         </div>
-        <div className="flex info gap-x-6">
+        <div className="flex info gap-x-6 mb-10 pl-8">
           <div className="flex info-item gap-x-5">
             <span>
               <svg

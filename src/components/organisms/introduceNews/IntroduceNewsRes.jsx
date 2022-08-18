@@ -6,28 +6,25 @@ import RelatePosts from "../../molecules/post/RelatePosts";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import handleGetPostsByType from "../../../handlers/handleGetPost";
-const IntroduceNews = () => {
+const IntroduceNewsRes = () => {
   const data = useSelector((state) => state.post.data);
   const news = handleGetPostsByType(data, "news");
   const navigate = useNavigate();
   return (
-    <section className="relative intro-news mx-auto mb-20 px-3">
+    <section className="relative intro-news mb-20 mx-auto flex flex-col w-4/5">
       <TextTitle note="Bản tin">Tin tức nổi bật</TextTitle>
-      <div className="grid grid-cols-3 gap-x-6">
-        {news.length > 0 &&
-          news
-            .slice(0, 2)
-            .map((item) => (
-              <PostCard
-                key={item.id}
-                data={item}
-                authorName={false}
-                topic="news"
-              ></PostCard>
-            ))}
-        <RelatePosts data={news.slice(2, 5)}></RelatePosts>
+      <div className="grid grid-rows-2 gap-y-6 ">
+        {news.length > 0 && (
+          <PostCard
+            key={news[0].id}
+            data={news[0]}
+            authorName={false}
+            topic="news"
+          ></PostCard>
+        )}
+        <RelatePosts data={news.slice(1, 4)}></RelatePosts>
         <Button
-          className="btn-load px-5 py-4 absolute top-[10px] right-[100px]"
+          className="btn-load px-5 py-4 absolute top-[10px] right-0"
           onClick={() =>
             navigate("/news/allposts/tin-tuc", { state: { topic: "news" } })
           }
@@ -55,4 +52,4 @@ const IntroduceNews = () => {
   );
 };
 
-export default IntroduceNews;
+export default IntroduceNewsRes;

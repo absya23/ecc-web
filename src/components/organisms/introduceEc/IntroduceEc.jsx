@@ -4,15 +4,15 @@ import TextTitle from "../../atoms/textTitle/TextTitle";
 
 const IntroduceEc = () => {
   return (
-    <section className="flex flex-col mb-10 intro-ec px-[120px] items-center relative mt-20">
+    <section className="flex flex-col mb-10 intro-ec !max-w-full px-3 items-center relative mt-20">
       <h2 className="text-[25px] font-title intro-ec-title uppercase mb-20">
         About us
       </h2>
-      <div className="flex w-full mt-16">
+      <div className="flex items-center w-full mt-16 max-w-[1200px]">
         <div className="w-1/2">
           <img src={introEC} alt="" className="object-cover" />
         </div>
-        <div className="w-1/2 pt-[96px] pr-[110px]">
+        <div className="w-1/2">
           <TextTitle note="Tổng quan">Bộ môn Thương mại điện tử</TextTitle>
           <p className="leading-loose">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non id
