@@ -73,7 +73,7 @@ const SinglePost = ({
           {overview}
         </p>
         <img src={img} alt="" className="mb-5" />
-        <p>
+        <p className="mb-20">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro non,
           doloremque cum dolore excepturi voluptatum a eum? Voluptatum excepturi
           reprehenderit numquam veritatis debitis praesentium ipsam, harum sed

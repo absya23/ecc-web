@@ -4,7 +4,7 @@ import TextTitle from "../../atoms/textTitle/TextTitle";
 
 const IntroduceEc = () => {
   return (
-    <section className="flex flex-col mb-10 intro-ec !max-w-full px-3 items-center relative mt-20">
+    <section className="flex flex-col mb-10 intro-ec !max-w-full px-5 items-center relative mt-20">
       <h2 className="text-[25px] font-title intro-ec-title uppercase mb-20">
         About us
       </h2>

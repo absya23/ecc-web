@@ -32,7 +32,7 @@ const HomePage = () => {
       <IntroduceEvents></IntroduceEvents>
       <IntroduceEc></IntroduceEc>
       <>
-        <section className="cooperation mx-auto px-3">
+        <section className="cooperation mx-auto px-5">
           <TextTitle note="Hợp tác">
             Các đối tác ngành thương mại điện tử
           </TextTitle>

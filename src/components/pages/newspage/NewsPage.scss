@@ -1,0 +1,61 @@
+@use "../../../scss/" as *;
+
+@media (max-width: 1200px) {
+  .news-page {
+    .news-hot {
+      width: 90%;
+      flex-direction: column;
+      row-gap: 40px;
+      .post-preview {
+        width: 100%;
+        img {
+          max-width: 50%;
+        }
+      }
+      .latest-posts {
+        max-width: 100%;
+        > div {
+          grid-template-rows: repeat(2, minmax(0, 1fr));
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          column-gap: 20px;
+        }
+      }
+    }
+    .news-topic,
+    .news-topic2 {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .news-page {
+    .news-hot {
+      width: 90%;
+      flex-direction: column;
+      row-gap: 40px;
+      .post-preview {
+        width: 100%;
+        flex-direction: column;
+        row-gap: 20px;
+        img {
+          max-width: 100%;
+        }
+      }
+      .latest-posts {
+        > div {
+          grid-template-rows: repeat(2, minmax(0, 1fr));
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+    .news-topic,
+    .news-topic2 {
+      width: 90%;
+      > div {
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

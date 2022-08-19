@@ -1,19 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import PostCard from "../../molecules/post/PostCard";
-import Pagination from "../../pagination/Pagination";
 import { CSSTransition } from "react-transition-group";
 import "./NewsTopic.scss";
 import { useSelector } from "react-redux";
 import handleGetPostsByType from "../../../handlers/handleGetPost";
+import PaginationArrow from "../../pagination/PaginationArrow";
 
-const NewsTopic = ({ children, topic }) => {
+const NewsTopicRes = ({ children, topic }) => {
   const [visible, setVisible] = useState(false);
   const data = useSelector((state) => state.post.data);
   const posts = handleGetPostsByType(data, topic);
-  const [postList, setPostList] = useState(posts.slice(0, 4));
+  const [postList, setPostList] = useState(posts.slice(0, 2));
   const [pagination, setPagination] = useState({
     page: 1,
-    row: 4,
+    row: 2,
     totalPosts: posts.length,
   });
   const handlePageChange = (newPage) => {
@@ -46,29 +46,29 @@ const NewsTopic = ({ children, topic }) => {
         classNames="postList"
         unmountOnExit
       >
-        <div className="grid grid-cols-4 gap-x-9">
+        <div className="grid grid-cols-2 gap-x-9 gap-y-9">
           {postList.length > 0 &&
             postList.map((item) => (
               <PostCard key={item.id} data={item} authorName={true}></PostCard>
             ))}
         </div>
       </CSSTransition>
-      <Pagination
+      <PaginationArrow
         pagination={pagination}
         onPageChange={handlePageChange}
-      ></Pagination>
+      ></PaginationArrow>
     </section>
   );
 };
 
-export const NewsTopic2 = ({ children, topic }) => {
+export const NewsTopicRes2 = ({ children, topic }) => {
   const [visible, setVisible] = useState(false);
   const data = useSelector((state) => state.post.data);
   const posts = handleGetPostsByType(data, topic);
   const [postList, setPostList] = useState(posts.slice(0, 4));
   const [pagination, setPagination] = useState({
     page: 1,
-    row: 3,
+    row: 2,
     totalPosts: posts.length - 1,
   });
   const handlePageChange = (newPage) => {
@@ -94,7 +94,7 @@ export const NewsTopic2 = ({ children, topic }) => {
   return (
     <section className="news-topic2 relative mb-40 mx-auto px-5">
       <h4 className="mb-10 topic-posts font-title">{children}</h4>
-      <div className="grid w-full content gap-x-9">
+      <div className="grid w-full content gap-x-9 gap-y-9">
         <PostCard data={posts[0]} authorName={true}></PostCard>
         <div className="relative flex flex-col">
           <CSSTransition
@@ -103,7 +103,7 @@ export const NewsTopic2 = ({ children, topic }) => {
             classNames="postList"
             unmountOnExit
           >
-            <div className="grid grid-cols-3 gap-x-9">
+            <div className="grid grid-cols-2 gap-x-9">
               {postList.length > 0 &&
                 postList.map((item) => (
                   <PostCard
@@ -114,14 +114,14 @@ export const NewsTopic2 = ({ children, topic }) => {
                 ))}
             </div>
           </CSSTransition>
-          <Pagination
+          <PaginationArrow
             pagination={pagination}
             onPageChange={handlePageChange}
-          ></Pagination>
+          ></PaginationArrow>
         </div>
       </div>
     </section>
   );
 };
 
-export default NewsTopic;
+export default NewsTopicRes;

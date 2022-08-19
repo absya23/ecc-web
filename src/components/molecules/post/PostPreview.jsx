@@ -13,7 +13,7 @@ const PostPreview = ({
   const navigate = useNavigate();
   const newParam = title?.replace(/\s+/g, "-");
   return (
-    <div className="flex gap-x-9 w-[888px]">
+    <div className="flex gap-x-9 w-[888px] post-preview">
       <img src={img} alt="" className="w-full max-w-[492px] rounded-md" />
       <div className="flex flex-col items-start w-full font-desc">
         <h4

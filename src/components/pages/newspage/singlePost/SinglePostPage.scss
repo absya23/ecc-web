@@ -1,0 +1,35 @@
+@use "../../../../scss/" as *;
+
+@media (max-width: 1200px) {
+  .single-post-page {
+    &_content {
+      // column-gap: 30px;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      > div {
+        max-width: 90%;
+      }
+    }
+    .post-propose {
+      width: 90%;
+      & > div {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        row-gap: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .single-post-page {
+    .post-propose {
+      & > div {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, minmax(0, 1fr));
+        row-gap: 24px;
+      }
+    }
+  }
+}

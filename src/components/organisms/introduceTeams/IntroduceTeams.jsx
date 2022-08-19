@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const IntroduceTeams = () => {
   const navigate = useNavigate();
   return (
-    <section className="mb-20 intro-teams mx-auto px-3 pt-[105px] flex flex-col items-center">
+    <section className="mb-20 intro-teams mx-auto px-5 pt-[105px] flex flex-col items-center">
       <div className="text-center mb-[80px]">
         <TextTitle note="Đội ngũ">
           Ban ngành trong ECommerce Club @UIT
