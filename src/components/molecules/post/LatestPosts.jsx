@@ -3,7 +3,7 @@ import LatestPost from "../../atoms/post/LatestPost";
 
 const LatestPosts = ({ topic, data }) => {
   return (
-    <div className="flex flex-col items-start w-full max-w-[321px]">
+    <div className="latest-posts flex flex-col items-start w-full max-w-[321px]">
       <h5 className="text-note font-semibold pb-1 border-b-[1px] border-b-note mb-7">
         Bài viết gần đây
       </h5>

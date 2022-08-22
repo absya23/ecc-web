@@ -11,8 +11,8 @@ const IntroduceEvents = () => {
   const events = handleGetPostsByType(data, "events");
   const navigate = useNavigate();
   return (
-    <section className="w-full intro-news px-[100px] mb-10 flex flex-col">
-      <Posts posts={events}>
+    <section className="intro-event mx-auto mb-10 flex flex-col relative px-3">
+      <Posts posts={events} className="intro-event_content">
         <TextTitle note="Thông báo">Hoạt động và sự kiện</TextTitle>
       </Posts>
       <Button

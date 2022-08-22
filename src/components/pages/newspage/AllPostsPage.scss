@@ -1,0 +1,33 @@
+@use "../../../scss/" as *;
+
+@media (max-width: 1200px) {
+  .all-posts {
+    &_container {
+      column-gap: 50px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .all-posts {
+    &_filter {
+      width: 90%;
+      flex-direction: column-reverse;
+      row-gap: 20px;
+      input {
+        width: 100%;
+      }
+    }
+    &_container {
+      width: 100%;
+      flex-direction: column;
+      row-gap: 80px;
+      column-gap: 50px;
+      align-items: center;
+      &_left,
+      &_right {
+        max-width: 90%;
+      }
+    }
+  }
+}

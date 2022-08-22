@@ -7,7 +7,7 @@ import PostCardsVertical from "../../organisms/postCardsVertical/PostCardsVertic
 import { useSelector } from "react-redux";
 import handleGetPostsByType from "../../../handlers/handleGetPost";
 import { debounce } from "lodash";
-
+import "./AllPostsPage.scss";
 import ReactPaginate from "react-paginate";
 
 const itemsPerPage = 6;
@@ -42,7 +42,7 @@ const AllPostsPage = () => {
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
     if (!postsSearch || postsSearch?.length === 0) return;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(postsSearch.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(postsSearch?.length / itemsPerPage));
   }, [postsSearch, itemOffset]);
@@ -53,16 +53,16 @@ const AllPostsPage = () => {
   };
   return (
     <>
-      <div className="px-[100px] pt-[40px]">
-        <div className="flex justify-between mb-10">
+      <div className="pt-[40px] all-posts">
+        <div className="all-posts_filter w-full max-w-[1200px] flex justify-between mb-10 mx-auto px-5">
           <div className="flex gap-x-3">
             <Button className="btn-filter active font-title">Mới nhất</Button>
             <Button className="btn-filter font-title">Đọc nhiều nhất</Button>
           </div>
           <Search onChange={handleChangeInput}></Search>
         </div>
-        <section className="flex mb-20 gap-x-20">
-          <div className="flex-col flex-1">
+        <section className="all-posts_container flex mb-20 gap-x-20 mx-auto px-5">
+          <div className="all-posts_container_left flex-col flex-1">
             {noResults && (
               <div className="w-full">
                 <h2>Không có kết quả</h2>
@@ -87,7 +87,7 @@ const AllPostsPage = () => {
               </>
             )}
           </div>
-          <div className="flex flex-col items-start w-full max-w-[350px]">
+          <div className="all-posts_container_right flex flex-col items-start w-full max-w-[320px]">
             <h5 className="text-note font-semibold pb-1 border-b-[1px] border-b-note mb-7 inline-block">
               Bài viết nổi bật
             </h5>

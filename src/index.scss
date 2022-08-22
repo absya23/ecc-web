@@ -98,7 +98,13 @@
   @include text-gradient;
 }
 
+section {
+  width: 100%;
+  max-width: 1200px;
+}
+
 img {
+  width: 100%;
   object-fit: cover;
   object-position: center;
 }

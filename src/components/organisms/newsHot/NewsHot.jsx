@@ -7,7 +7,7 @@ import PostPreview from "../../molecules/post/PostPreview";
 const NewsHot = () => {
   const posts = handlePosts(useSelector((state) => state.post.data));
   return (
-    <section className="mt-[60px] w-full flex gap-x-[50px] mb-20">
+    <section className="news-hot mt-[60px] w-full flex gap-x-[50px] mb-20 px-5">
       <PostPreview data={posts[0]} topic="news"></PostPreview>
       <LatestPosts data={posts} topic="news"></LatestPosts>
     </section>
