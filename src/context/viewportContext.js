@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-const ViewportContext = createContext({});
+const ViewportContext = createContext(undefined);
 export default function ViewportProvider(props) {
   const [width, setWidth] = useState(window.innerWidth);
   const handleWindowResize = () => {
