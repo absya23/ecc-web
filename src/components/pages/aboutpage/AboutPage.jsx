@@ -8,7 +8,7 @@ import "./AboutPage.scss"
 
 const AboutPage = () => {
   return (
-    <section className="pb-20 pt-[60px] bg-[#FAFAFA] flex flex-col items-center justify-around px-[100px] bg-aboutus">
+    <section className="pb-20 pt-[60px] bg-[#FAFAFA] flex flex-col items-center justify-around px-[100px]">
       <div className="w-full">
         <AboutusItro/>
       </div>
