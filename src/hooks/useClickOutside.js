@@ -9,7 +9,9 @@ export default function useClickOutside(dom = "button") {
       if (
         nodeRef.current &&
         !nodeRef.current.contains(e.target) &&
-        !e.target.matches(dom)
+        !e.target.matches(dom) &&
+        !e.target.matches("svg") &&
+        !e.target.matches("path")
       ) {
         setShow(false);
       }

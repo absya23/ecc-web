@@ -20,7 +20,7 @@ function App() {
         <Suspense fallback={<></>}>
           <RouteConfig></RouteConfig>
         </Suspense>
-        {/* <Footer></Footer> */}
+        <Footer></Footer>
       </ViewportProvider>
     </>
   );

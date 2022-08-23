@@ -12,8 +12,8 @@ const AboutPage = () => {
       <div className="w-full">
         <AboutusItro />
       </div>
-      <div className="flex flex-row w-full">
-        <div className="flex flex-row w-4/6 mr-20">
+      <div className="about_intro flex flex-row w-full">
+        <div className="about_intro_1 flex flex-row w-4/6 mr-20">
           <div className="flex flex-col mr-10">
             <AboutusSecond
               number="1"
@@ -39,7 +39,7 @@ const AboutPage = () => {
             ></AboutusSecond>
           </div>
         </div>
-        <div className="w-2/6 h-full">
+        <div className="about_intro_2 w-2/6 h-full">
           <AboutusThird></AboutusThird>
         </div>
       </div>

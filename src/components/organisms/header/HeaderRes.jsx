@@ -14,28 +14,27 @@ const HeaderRes = () => {
     <header className="relative bg-white header header-res">
       <div className="flex w-full max-w-[1200px] mx-auto items-center justify-between header-container">
         <Logo></Logo>
-        <button
+        <Button
           className="flex items-center justify-center w-10 h-10 rounded-md btn-menu"
           onClick={() => {
             setShow(true);
+            console.log(show);
           }}
         >
-          <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 448 512"
-              width="20"
-              height="20"
-            >
-              <path
-                fill="#fff"
-                d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"
-              />
-            </svg>
-          </span>
-        </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            width="20"
+            height="20"
+          >
+            <path
+              fill="#86abf9"
+              d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"
+            />
+          </svg>
+        </Button>
         <div
-          className={`nav w-1/2 max-w-[220px] h-screen z-[2000] bg-white flex flex-col justify-start absolute right-0 top-0 transition-all menu-sidebar ${
+          className={`nav w-1/2 max-w-[240px] h-screen z-[2000] bg-white flex flex-col justify-start absolute right-0 top-0 transition-all menu-sidebar ${
             show ? "post-card-shadow" : "hidden invisible"
           }`}
           ref={nodeRef}
@@ -84,7 +83,7 @@ const HeaderRes = () => {
               rel="noreferrer"
               className="block px-8 py-3"
             >
-              <span className="mr-2">
+              <span className="mr-2 arrow">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"

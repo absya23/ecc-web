@@ -1,2 +1,21 @@
 @use "../../../scss/" as *;
 
+@media (max-width: 750px) {
+  .about_intro {
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    row-gap: 40px;
+    &_1 {
+      width: 90%;
+      margin: auto;
+    }
+    &_2 {
+      width: 90%;
+      margin: auto;
+      .first {
+        justify-content: center;
+      }
+    }
+  }
+}

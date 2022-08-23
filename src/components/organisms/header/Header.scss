@@ -29,12 +29,13 @@
     }
   }
   .btn-menu {
-    background: $gradient-primary;
+    background: #fff;
+    border: 2px solid $primary-color;
     &:hover {
-      background: #fff;
+      background: $primary-color;
       border: 2px solid $primary-color;
       path {
-        fill: $primary-color;
+        fill: #fff;
       }
     }
   }
@@ -63,13 +64,14 @@
         color: $text-color;
         a {
           padding: 5px 30px !important;
+          border-left: 0px;
         }
         &:hover,
         a:hover {
           border-left: 0px;
           background: transparent;
           -webkit-text-fill-color: $primary-color;
-          path {
+          .arrow path {
             fill: #86abf9;
           }
         }
@@ -77,6 +79,9 @@
     }
     path:hover {
       fill: #86abf9;
+    }
+    .btn-menu path:hover {
+      fill: #fff;
     }
     .menu-sidebar {
       animation: swiper 0.3s ease;
