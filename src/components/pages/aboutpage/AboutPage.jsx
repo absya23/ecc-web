@@ -4,6 +4,7 @@ import AboutusSecond from "../../organisms/aboutus_second/aboutus_second";
 import AboutusThird from "../../organisms/aboutus_third/aboutus_third";
 import AboutusFour from "../../organisms/aboutus_four/aboutus_four";
 import AboutusLast from "../../organisms/aboutus_last/aboutus_last";
+import AboutusFif from "../../organisms/aboutus_fif/aboutus_fif";
 import "./AboutPage.scss"
 
 const AboutPage = () => {
@@ -28,6 +29,9 @@ const AboutPage = () => {
         </div>
       </div>
       <AboutusFour></AboutusFour>
+      <div className="mt-10 slider flex justify-center items-center">
+        <AboutusFif/>
+      </div>
       <AboutusLast></AboutusLast>
     </section>
   );
