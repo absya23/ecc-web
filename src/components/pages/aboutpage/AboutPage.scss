@@ -1,5 +1,9 @@
 @use "../../../scss/" as *;
 
+.slider {
+    width: 100vh;
+    height: 70vh;
+}
 @media (max-width: 750px) {
   .about_intro {
     flex-direction: column;
