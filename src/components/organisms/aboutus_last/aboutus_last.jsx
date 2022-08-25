@@ -4,7 +4,7 @@ import "./aboutus_last.scss";
 
 const aboutusLast = ({}) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-24">
       <div className="flex flex-col justify-center w-full mt-20 first">
         <h2 className="flex justify-center text-2xl font-bold text-color">
           BAN CỐ VẤN

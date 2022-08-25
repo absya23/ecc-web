@@ -1,6 +1,7 @@
 import "./aboutus_fif.scss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "../../molecules/aboutus/aboutus_slider";
+import { forEach } from "lodash";
 
 const AboutusFif = () => {
   const [currentTab, setCurrentTab] = useState("1");
@@ -75,15 +76,28 @@ const AboutusFif = () => {
     },
   ];
   const handleTabClick = (e) => {
+    const tabs = document.querySelectorAll(".tag-item");
+    tabs.forEach((tab) => {
+      if (currentTab === tab.getAttribute("id")) tab.classList.remove("active");
+    });
+    e.target.classList.add("active");
     setCurrentTab(e.target.id);
   };
+
+  useEffect(() => {
+    const tabs = document.querySelectorAll(".tag-item");
+    tabs.forEach((tab) => {
+      if (currentTab === tab.getAttribute("id")) tab.classList.add("active");
+    });
+  }, []);
+
   return (
     <div className="mt-5 w-full flex aboutus justify-center items-center">
       <div className="container w-full h-full flex flex-col">
         <div className="tabs mt-3 ml-3 mr-3 flex flex-auto flex-row">
           {tabs.map((tab, i) => (
             <button
-              className="mr-5"
+              className="mr-5 tag-item"
               key={i}
               id={tab.id}
               disabled={currentTab === `${tab.id}`}
@@ -103,7 +117,7 @@ const AboutusFif = () => {
                     ratio={`3:2`}
                     mode={`automatic`}
                     timeout={`3000`}
-                    display={currentTab === `${tab.id}` ? '' : 'hidden'}
+                    display={currentTab === `${tab.id}` ? "" : "hidden"}
                     className="w-full h-full"
                   />
                 </div>

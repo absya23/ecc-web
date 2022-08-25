@@ -7,7 +7,7 @@ const aboutusFour = ({}) => {
       <h2 className="flex justify-center text-2xl font-bold text-color">
         OUR TEAM/ OUR PERSONEL
       </h2>
-      <p className="flex justify-center mt-2 text-center">
+      <p className="flex justify-center mt-2 text-center mb-5">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero
         ultricies viverra risus, enim urna felis ut. Ligula ultrices interdum
         urna fermentum at urna, commodo.
