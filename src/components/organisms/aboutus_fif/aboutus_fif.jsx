@@ -109,9 +109,9 @@ const AboutusFif = () => {
         </div>
         <div className="content flex flex-wrap w-full h-full mt-5 relative">
           {tabs.map((tab, i) => (
-            <div key={i} className="w-full h-full absolute">
+            <div key={i} className={`w-full h-full absolute ${currentTab == tab.id ? 'z-20': ''}`}>
               {currentTab === `${tab.id}` && (
-                <div className="w-full h-full">
+                <div className={`w-full h-full`}>
                   <Slider
                     input={tab.content}
                     ratio={`3:2`}

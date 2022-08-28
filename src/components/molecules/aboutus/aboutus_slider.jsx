@@ -83,7 +83,7 @@ export default class Slideshow extends React.Component {
 
   render() {
     return (
-      <div className={`lp-slideshow w-full h-full ${this.display}`}>
+      <div className={`lp-slideshow w-full h-full`}>
         <div className="container">
           {
             this.props.input.map((image, index) => {
